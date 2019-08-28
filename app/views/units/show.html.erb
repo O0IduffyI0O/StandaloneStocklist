@@ -12,3 +12,16 @@
   <strong>Size: </strong>
   <%= @unit.size %>
 </p>
+
+<% if @unit.images.attached? %>
+<p>
+  <strong>Images: </strong><br>
+  <% @unit.images.each do |image| %>
+    <%= image_tag(image) %>
+  <% end %>
+</p>
+<% end %>
+
+<div class="alert alert-primary" role="alert">
+  A simple primary alert—check it out!
+</div>

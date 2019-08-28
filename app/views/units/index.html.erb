@@ -1,17 +1,14 @@
 <h1>Showing all Units</h1>
 
-<table>
-  <tr>
-    <th>Unit ID</th>
-    <th>Unit Type</th>
-    <th>Unit Size</th>
-  </tr>
-
-  <% @units.each do |unit| %>
-    <tr>
-      <td><%= unit.id_no %></td>
-      <td><%= unit.unit_type %></td>
-      <td><%= unit.size %></td>
-    </tr>
-  <% end %>
-</table>
+<% @units.each do |unit| %>
+  <div class="card" style="width: 18rem;">
+    <% if unit.images.attached? %>
+      <%= image_tag unit.images[0], class: "card-img-top" %>
+    <% end %>
+    <div class="card-body">
+      <h5 class="card-title"><%= unit.id_no %></h5>
+      <p class="card-text"><%= unit.unit_type + ": " + unit.size %></p>
+      <%= link_to "View", unit_path(unit), class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

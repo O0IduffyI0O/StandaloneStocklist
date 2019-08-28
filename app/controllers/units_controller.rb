@@ -20,7 +20,7 @@ class UnitsController < ApplicationController
 
   private
     def unit_params
-      params.require(:unit).permit(:id_no, :unit_type, :size)
+      params.require(:unit).permit(:id_no, :unit_type, :size, images: [])
     end
 
 end
