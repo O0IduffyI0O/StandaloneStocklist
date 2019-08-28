@@ -1,0 +1,17 @@
+<h1>Showing all Units</h1>
+
+<table>
+  <tr>
+    <th>Unit ID</th>
+    <th>Unit Type</th>
+    <th>Unit Size</th>
+  </tr>
+
+  <% @units.each do |unit| %>
+    <tr>
+      <td><%= unit.id_no %></td>
+      <td><%= unit.unit_type %></td>
+      <td><%= unit.size %></td>
+    </tr>
+  <% end %>
+</table>

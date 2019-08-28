@@ -1,0 +1,22 @@
+<h1>New Unit</h1>
+
+<%= form_with scope: :unit, url: units_path, local: true do |f| %>
+  <p>
+    <%= f.label :id_no %><br>
+    <%= f.text_field :id_no %>
+  </p>
+
+  <p>
+    <%= f.label :unit_type %><br>
+    <%= f.text_field :unit_type %>
+  </p>
+
+  <p>
+    <%= f.label :size %><br>
+    <%= f.text_field :size %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
