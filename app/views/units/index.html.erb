@@ -1,14 +1,66 @@
 <h1>Showing all Units</h1>
 
-<% @units.each do |unit| %>
-  <div class="card" style="width: 18rem;">
-    <% if unit.images.attached? %>
-      <%= image_tag unit.images[0], class: "card-img-top" %>
-    <% end %>
-    <div class="card-body">
-      <h5 class="card-title"><%= unit.id_no %></h5>
-      <p class="card-text"><%= unit.unit_type + ": " + unit.size %></p>
-      <%= link_to "View", unit_path(unit), class: "btn btn-primary" %>
+<div class="container" style="padding-bottom: 1rem;">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card text-center">
+        <form>
+          <div class="form-group" style="margin-bottom: 0;">
+            <div class="card-header">
+              <label for="exampleFormControlSelect1">Select Unit Type:</label>
+            </div>
+            <div class="card-body">
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>All</option>
+                <option>Canteen</option>
+                <option>Office-Welfare</option>
+                <option>Aurora</option>
+              </select>
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="card text-center">
+        <form>
+          <div class="form-group" style="margin-bottom: 0;">
+            <div class="card-header">
+              <label for="exampleFormControlSelect1">Select Unit Size:</label>
+            </div>
+            <div class="card-body">
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>All</option>
+                <option>28X10</option>
+                <option>18X6</option>
+                <option>32X10</option>
+              </select>
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-<% end %>
+</div>
+
+<div class="container">
+  <% @units.each do |unit| %>
+    <div class="card" style="width: 18rem;">
+      <% if unit.images.attached? %>
+        <%= image_tag unit.images[0], class: "card-img-top" %>
+      <% end %>
+      <div class="card-body">
+        <h5 class="card-title"><%= unit.id_no %></h5>
+        <p class="card-text"><%= unit.unit_type + ": " + unit.size %></p>
+        <%= link_to "View", unit_path(unit), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>

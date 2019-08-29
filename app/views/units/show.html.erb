@@ -14,14 +14,10 @@
 </p>
 
 <% if @unit.images.attached? %>
-<p>
-  <strong>Images: </strong><br>
+  <p><strong>Images: </strong><br></p>
   <% @unit.images.each do |image| %>
-    <%= image_tag(image) %>
+    <%= image_tag image.variant(resize: "300x300") %>
   <% end %>
-</p>
 <% end %>
 
-<div class="alert alert-primary" role="alert">
-  A simple primary alert—check it out!
-</div>
+
