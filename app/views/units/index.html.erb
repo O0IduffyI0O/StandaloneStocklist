@@ -16,7 +16,9 @@
               <option></option>
               <option>Canteen</option>
               <option>Office-Welfare</option>
-              <option>Aurora</option>
+              <option>3 TREAD STEPS</option>
+              <option>Office</option>
+              <option>Drying Room</option>
             </select>
           </div>
         </div>
@@ -27,6 +29,8 @@
           <div class="card-body">
             <select class="form-control" name="unit_size" id="exampleFormControlSelect2">
               <option></option>
+              <option>18X6</option>
+              <option>24X8</option>
               <option>28X10</option>
               <option>32X10</option>
             </select>
@@ -42,16 +46,18 @@
 
 
 <div class="container">
-  <% @units.each do |unit| %>
-    <div class="card" style="width: 18rem;">
-      <% if unit.images.attached? %>
-        <%= image_tag unit.images[0], class: "card-img-top" %>
-      <% end %>
-      <div class="card-body">
-        <h5 class="card-title"><%= unit.id_no %></h5>
-        <p class="card-text"><%= unit.unit_type + ": " + unit.size %></p>
-        <%= link_to "View", unit_path(unit), class: "btn btn-primary" %>
+  <div class="card-columns">
+    <% @units.each do |unit| %>
+      <div class="card" style="width: 18rem;">
+        <% if unit.images.attached? %>
+          <%= image_tag unit.images[0], class: "card-img-top" %>
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= unit.id_no %></h5>
+          <p class="card-text"><%= unit.unit_type + ": " + unit.size %></p>
+          <%= link_to "View", unit_path(unit), class: "btn btn-primary" %>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
