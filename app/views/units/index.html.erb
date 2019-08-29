@@ -1,54 +1,45 @@
 <h1>Showing all Units</h1>
 
-<div class="container" style="padding-bottom: 1rem;">
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="card text-center">
-        <form>
-          <div class="form-group" style="margin-bottom: 0;">
-            <div class="card-header">
-              <label for="exampleFormControlSelect1">Select Unit Type:</label>
-            </div>
-            <div class="card-body">
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>All</option>
-                <option>Canteen</option>
-                <option>Office-Welfare</option>
-                <option>Aurora</option>
-              </select>
-              <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
 
-    <div class="col-sm-6">
-      <div class="card text-center">
-        <form>
-          <div class="form-group" style="margin-bottom: 0;">
-            <div class="card-header">
-              <label for="exampleFormControlSelect1">Select Unit Size:</label>
-            </div>
-            <div class="card-body">
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>All</option>
-                <option>28X10</option>
-                <option>18X6</option>
-                <option>32X10</option>
-              </select>
-              <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-            </div>
+
+
+<div class="container">
+  <div class="card text-center">
+    <form method="get">
+      <div class="row">
+        <div class="form-group col-sm-6">
+          <div class="card-header">
+            <label for="exampleFormControlSelect1">Select Unit Type</label>
           </div>
-        </form>
+          <div class="card-body">
+            <select class="form-control" name="unit_type" id="exampleFormControlSelect1">
+              <option></option>
+              <option>Canteen</option>
+              <option>Office-Welfare</option>
+              <option>Aurora</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group col-sm-6">
+          <div class="card-header">
+            <label for="exampleFormControlSelect2">Select Unit Size</label>
+          </div>
+          <div class="card-body">
+            <select class="form-control" name="unit_size" id="exampleFormControlSelect2">
+              <option></option>
+              <option>28X10</option>
+              <option>32X10</option>
+            </select>
+          </div>
+        </div>
       </div>
-    </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
   </div>
 </div>
+
 
 <div class="container">
   <% @units.each do |unit| %>

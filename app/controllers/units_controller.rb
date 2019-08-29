@@ -17,6 +17,7 @@ class UnitsController < ApplicationController
   def index
     @units = Unit.all
     @units = Unit.unit_type(params[:unit_type]) if params[:unit_type].present?
+    @units = Unit.unit_size(params[:unit_size]) if params[:unit_size].present?
   end
 
   private
